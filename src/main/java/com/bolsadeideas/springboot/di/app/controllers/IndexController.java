@@ -1,5 +1,6 @@
 package com.bolsadeideas.springboot.di.app.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +13,12 @@ public class IndexController {
 	
 	//Implementamos como atributo MiServicio sin inyeccion de dependencia
 	//objeto servicio de la clase MiServicio
-	private MiServicio servicio = new MiServicio();
+	/*private MiServicio servicio = new MiServicio();*/
+	
+	//quitamos la parte de = new MiServcio
+	//inyectamos con Autowired, que inyecta un objeto registrado en el contenedor de Spring de tipo MiServicio
+	@Autowired
+	private MiServicio servicio;
 	
 	//Metodo handler, siempre son publicos. Retorna un nombre de vista
 	//index es el nombre del metodo y se genera un Model para poder pasar datos a la vista
