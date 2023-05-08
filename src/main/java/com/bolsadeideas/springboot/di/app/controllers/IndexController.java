@@ -5,7 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.bolsadeideas.springboot.di.app.models.service.MiServicio;
+import com.bolsadeideas.springboot.di.app.models.service.IServicio;
+
 
 //Cualquier controlador tiene que ser un componente, por lo que se hace esta notacion
 @Controller
@@ -15,10 +16,14 @@ public class IndexController {
 	//objeto servicio de la clase MiServicio
 	/*private MiServicio servicio = new MiServicio();*/
 	
-	//quitamos la parte de = new MiServcio
+	//quitamos la parte de = new MiServicio
 	//inyectamos con Autowired, que inyecta un objeto registrado en el contenedor de Spring de tipo MiServicio
+	/*@Autowired
+	private MiServicio servicio;*/
+	
+	//Ahora en vez de la clase concreta MiServicio usamos la interfaz
 	@Autowired
-	private MiServicio servicio;
+	private IServicio servicio;
 	
 	//Metodo handler, siempre son publicos. Retorna un nombre de vista
 	//index es el nombre del metodo y se genera un Model para poder pasar datos a la vista
