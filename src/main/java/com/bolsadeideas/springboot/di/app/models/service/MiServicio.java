@@ -32,8 +32,10 @@ public class MiServicio {
 //implementando el metodo operacion. Con @Primary especificamos cual es la principal a ejecutarse si no
 //se especifica cuando llaman a la interface desde el controlador.
 //Se puede prescindir de Primary y usar Qualifier desde el controlador para indicar que servicio llamar
-@Component("miServicioSimple")
-@Primary
+//@Component("miServicioSimple")
+//@Primary
+//Comentamos Primary y Component. Por lo tanto ya no estan manejadas por Spring y no estan registradas en el contenedor
+//por lo tanto no se pueden inyectar. Se usara una clase de configuracion para inyectar (AppConfig)
 public class MiServicio implements IServicio {
 	
 	//Override indica que se esta sobreescribiendo un metodo de una interface de la que se esta heredando

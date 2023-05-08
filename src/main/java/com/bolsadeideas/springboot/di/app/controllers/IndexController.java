@@ -27,8 +27,12 @@ public class IndexController {
 	//Tenemos dos clases concretas que implementan el metodo operacion. Como estamos injectando por
 	//interface, no estamos especificando que clase concreta se ejecutara. Una de las clases concretas
 	//debe estar especificada como la primaria
-	@Autowired
+	/*@Autowired
 	@Qualifier("miServicioComplejo") //con @Qualifier especificamos el nombre del servicio que queremos inyectar
+	private IServicio servicio;*/
+	
+	//Se registran componentes usando clase de Configuracion (AppConfig) y la notacion @Bean
+	@Autowired
 	private IServicio servicio;
 	
 	//Metodo handler, siempre son publicos. Retorna un nombre de vista

@@ -30,7 +30,8 @@ public class MiServicio {
 //Implementamos el metodo operacion de la interfaz IServicio
 //a los componentes le podemos dar un nombre para identificarlo de otras clases concretas que esten
 //implementando el metodo operacion
-@Component("miServicioComplejo")
+//@Component("miServicioComplejo")
+//Comentamos Component. Con lo cual no esta manejada por Spring, es una clase comun y corriente
 public class MiServicioComplejo implements IServicio {
 	
 	//Override indica que se esta sobreescribiendo un metodo de una interface de la que se esta heredando
