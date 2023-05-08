@@ -22,6 +22,10 @@ public class IndexController {
 	private MiServicio servicio;*/
 	
 	//Ahora en vez de la clase concreta MiServicio usamos la interfaz
+	//Ahora depende de algo generico y no concreto, la manutencion es mas simple
+	//Tenemos dos clases concretas que implementan el metodo operacion. Como estamos injectando por
+	//interface, no estamos especificando que clase concreta se ejecutara. Una de las clases concretas
+	//debe estar especificada como la primaria
 	@Autowired
 	private IServicio servicio;
 	
@@ -37,4 +41,9 @@ public class IndexController {
 		model.addAttribute("objeto", servicio.operacion());
 		return "index"; //esta vista "index" se creara en src/main/resources/templates
 	}
+
+
+	
+	
+	
 }

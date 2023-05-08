@@ -29,16 +29,14 @@ public class MiServicio {
 
 //Implementamos el metodo operacion de la interfaz IServicio
 //a los componentes le podemos dar un nombre para identificarlo de otras clases concretas que esten
-//implementando el metodo operacion. Con @Primary especificamos cual es la principal a ejecutarse si no
-//se especifica cuando llaman a la interface
-@Component("miServicioSimple")
-@Primary
-public class MiServicio implements IServicio {
+//implementando el metodo operacion
+@Component("miServicioComplejo")
+public class MiServicioComplejo implements IServicio {
 	
 	//Override indica que se esta sobreescribiendo un metodo de una interface de la que se esta heredando
 	@Override
 	public String operacion() {
-		return "ejecutando algun proceso importante simple...";
+		return "ejecutando algun proceso importante complejo...";
 	}
 	
 }
