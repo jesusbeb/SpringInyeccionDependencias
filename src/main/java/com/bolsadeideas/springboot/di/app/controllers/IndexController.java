@@ -1,6 +1,7 @@
 package com.bolsadeideas.springboot.di.app.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +28,7 @@ public class IndexController {
 	//interface, no estamos especificando que clase concreta se ejecutara. Una de las clases concretas
 	//debe estar especificada como la primaria
 	@Autowired
+	@Qualifier("miServicioComplejo") //con @Qualifier especificamos el nombre del servicio que queremos inyectar
 	private IServicio servicio;
 	
 	//Metodo handler, siempre son publicos. Retorna un nombre de vista

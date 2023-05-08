@@ -30,7 +30,8 @@ public class MiServicio {
 //Implementamos el metodo operacion de la interfaz IServicio
 //a los componentes le podemos dar un nombre para identificarlo de otras clases concretas que esten
 //implementando el metodo operacion. Con @Primary especificamos cual es la principal a ejecutarse si no
-//se especifica cuando llaman a la interface
+//se especifica cuando llaman a la interface desde el controlador.
+//Se puede prescindir de Primary y usar Qualifier desde el controlador para indicar que servicio llamar
 @Component("miServicioSimple")
 @Primary
 public class MiServicio implements IServicio {
