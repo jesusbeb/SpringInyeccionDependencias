@@ -11,7 +11,7 @@
 		<!--jalamos el titulo del controlador-->
 		<h1 th:text="${titulo}"></h1>		
 		<!--jalamos la descripcion de la factura-->
-		<h3 th:text="${factura.descripcion}"></h3>
+		<h3 th:utext="${factura.descripcion}"></h3>
 		
 		<!--Contenedor que muestra nombre de cliente y le concatenamos el apellido-->
 		<!--Usamos utext para que no escape de los caracteres especiales ya que en application.properties 
