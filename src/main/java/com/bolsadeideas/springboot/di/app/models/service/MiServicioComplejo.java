@@ -32,6 +32,7 @@ public class MiServicio {
 //implementando el metodo operacion
 //@Component("miServicioComplejo")
 //Comentamos Component. Con lo cual no esta manejada por Spring, es una clase comun y corriente
+//Se inyectara usando una clase de configuracion (AppConfig)
 public class MiServicioComplejo implements IServicio {
 	
 	//Override indica que se esta sobreescribiendo un metodo de una interface de la que se esta heredando
