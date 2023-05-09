@@ -9,10 +9,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class Factura {
 
-	@Value("${descripcion.factura}") //inyectamos como valor desde application.properties
+	@Value("${factura.descripcion}") //inyectamos como valor desde application.properties
 	private String descripcion;
+	
 	@Autowired //inyectamos
 	private Cliente cliente;
+	
+	@Autowired //inyectamos directamente desde AppConfig. Si tuvieramos mas de una implementacion, usariamos Primary o Quialifier
 	private List<ItemFactura> items;
 	
 	public String getDescripcion() {
