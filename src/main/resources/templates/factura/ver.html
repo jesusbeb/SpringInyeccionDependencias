@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--antes de poder utilizar los atributos de thyleaf tenemos agregar el netspace en la etiqueta html-->
+<!-- con xmlns: damos un nombre, por ejemplo th y su ruta -->
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<title th:text="${titulo}"></title>
+	</head>
+	
+	<body>
+		<!--jalamos el titulo del controlador-->
+		<h1 th:text="${titulo}"></h1>		
+		<!--jalamos la descripcion de la factura-->
+		<h3 th:text="${factura.descripcion}"></h3>
+		
+		<!--Contenedor que muestra nombre de cliente y le concatenamos el apellido-->
+		<!--Usamos utext para que no escape de los caracteres especiales ya que en application.properties 
+		usamos caracteres especiales en html para los acentros-->
+		<div>Cliente: <span th:utext="${factura.cliente.nombre + ' ' + factura.cliente.apellido}"></span></div>
+		
+		<!--Mostramos las lineas-->
+		<h4>Detalle de la factura</h4>		
+		<table>
+			<thead>
+				<tr>
+					<th>Producto</th>
+					<th>Precio</th> 
+					<th>Cantidad</th>
+					<th>Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!--Iteramos con item la lista factura.items-->
+				<tr th:each="item: ${factura.items}">
+					<td th:text="${item.producto.nombre}"></td>
+					<td th:text="${item.producto.precio }"></td>
+					<td th:text="${item.cantidad}"></td>
+					<td th:text="${item.calcularImporte()}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</body>	
+</html>

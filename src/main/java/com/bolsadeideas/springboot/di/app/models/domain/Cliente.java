@@ -10,7 +10,7 @@ public class Cliente {
 	@Value("${cliente.nombre}") //inyectamos con value ya que es escalar. Se definira en el application.properties
 	private String nombre;
 	
-	@Value("${cliente.nombre}") //definido igual en src/main/resources/application.properties
+	@Value("${cliente.apellido}") //definido igual en src/main/resources/application.properties
 	private String apellido;
 	
 	public String getNombre() {
