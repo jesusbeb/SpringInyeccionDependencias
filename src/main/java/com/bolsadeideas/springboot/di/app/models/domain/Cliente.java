@@ -6,7 +6,7 @@ import org.springframework.web.context.annotation.RequestScope;
 
 //Hacemos esta clase componente de Spring
 @Component
-@RequestScope
+@RequestScope //cambiamo su ciclo de vida
 public class Cliente {
 	
 	@Value("${cliente.nombre}") //inyectamos con value ya que es escalar. Se definira en el application.properties
