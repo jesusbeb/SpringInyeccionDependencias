@@ -2,9 +2,11 @@ package com.bolsadeideas.springboot.di.app.models.domain;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
 
 //Hacemos esta clase componente de Spring
 @Component
+@RequestScope
 public class Cliente {
 	
 	@Value("${cliente.nombre}") //inyectamos con value ya que es escalar. Se definira en el application.properties
